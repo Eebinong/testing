@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Signage Slideshow</title>
+  <style>
+    /* Reset some default styles */
+    body, h1, p, img {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* Center content vertically and horizontally */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0; /* Change this to your desired background color */
+    }
+    /* Container for the slideshow */
+    .slideshow {
+      width: 100vw;
+      height: 100vh;
+      text-align: center;
+      position: relative;
+    }
+    /* Slide content */
+    .slide {
+      display: none;
+    }
+    /* Show the first slide by default */
+    .slide:first-child {
+      display: block;
+    }
+    /* Slide title */
+    .slide-title {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    /* Slide text */
+    .slide-text {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    /* Slide image */
+    .slide-image {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <!-- Canva embed code goes here -->
+  <div style="position: relative; width: 100%; height: 0; padding-top: 56.2500%;
+ padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden;
+ border-radius: 8px; will-change: transform;">
+    <iframe id="canvaIframe" loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;"
+    src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9yjXutbk&#x2F;QfFyB1IPXsSLViWcrg0s5A&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
+  </iframe>
+  </div>
+
+  <script>
+    // Function to reset the slideshow to the first slide
+    function resetSlideshow() {
+      var iframe = document.getElementById('canvaIframe');
+      iframe.src = iframe.src; // Reload the iframe
+    }
+
+    // Listen for any interaction with the slideshow
+    document.getElementById('canvaIframe').addEventListener('load', function() {
+      clearTimeout(slideshowResetTimeout); // Clear the previous timeout
+      var currentPage = getCurrentPage();
+      var timeout = getPageTimeout(currentPage);
+      var slideshowResetTimeout = setTimeout(resetSlideshow, timeout); // Reset the timeout based on the current page
+    });
+
+        
+    // Function to get the current page of the Canva presentation
+    function getCurrentPage() {
+      var iframe = document.getElementById('canvaIframe');
+      var url = new URL(iframe.src);
+      var searchParams = new URLSearchParams(url.search);
+      var page = searchParams.get('page');
+      return parseInt(page) || 1; // Default to page 1 if page number is not found
+    }
+
+    // Function to get the timeout for the current page
+    function getPageTimeout(page) {
+      // Define timeouts for different pages (in milliseconds)
+      var timeouts = {
+        1: 100000, // 10 seconds for page 1
+
+        // Add more pages as needed
+      };
+
+      // Return the timeout for the current page or a default timeout if not defined
+      return timeouts[page] || 1000; // Default timeout is 5 seconds
+    }
+  </script>
+</body>
+</html>
+
