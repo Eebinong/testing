@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function redirectToRandomForm() {
+            const formUrls = [
+                'https://forms.gle/kB2Vyjo12qoYmRM27'
+            ];
+            const randomIndex = Math.floor(Math.random() * formUrls.length);
+
+            window.location.href = formUrls[randomIndex];
+        }
+    </script>
+</head>
+<body>
+    <button onclick="redirectToRandomForm()">Start!</button>
+</body>
+</html>
