@@ -8,8 +8,16 @@
     <script>
         var googleFormUrl = 'https://forms.gle/FLiozTruzxkfJRHY6'; // Replace this with your Google Form link
         
+        // Function to add cache buster to URL
+        function addCacheBuster(url) {
+            var cacheBuster = Date.now(); // Get current timestamp as cache buster
+            return url + '?v=' + cacheBuster;
+        }
+
+        // Function to redirect to Google Form
         function redirectToGoogleForm() {
-            window.location.href = googleFormUrl;
+            var urlWithCacheBuster = addCacheBuster(googleFormUrl);
+            window.location.href = urlWithCacheBuster;
         }
     </script>
 </head>
@@ -17,3 +25,4 @@
     <p>If you are not redirected automatically, <a href="https://forms.gle/FLiozTruzxkfJRHY6">click here</a>.</p>
 </body>
 </html>
+
