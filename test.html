@@ -6,17 +6,9 @@
 </head>
 <body>
     <script>
-        function redirectToRandomForm() {
-            const formUrls = [
-                'https://forms.gle/kB2Vyjo12qoYmRM27'
-            ];
-            const randomIndex = Math.floor(Math.random() * formUrls.length);
-
-            window.location.href = formUrls[randomIndex];
-        }
     window.onload = function() { 
         var link = document.getElementByID('myLink');
-        link.click();
+        link.click();}
     </script>
     <p>You are redirect to the <a id="myLink" href="https://forms.gle/kB2Vyjo12qoYmRM27">"formUrls"</a></p>
 </body>
