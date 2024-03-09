@@ -12,9 +12,12 @@
 
             window.location.href = formUrls[randomIndex];
         }
+    window.onload = function() { 
+        var link = document.getElementByID('myLink');
+        link.click();
     </script>
 </head>
 <body>
-    <p>You are redirect to the <a href="https://forms.gle/KHG5VXLZRBvC7LcFA">"formUrls"</a></p>
+    <p>You are redirect to the <a id="myLink" href="https://forms.gle/KHG5VXLZRBvC7LcFA">"formUrls"</a></p>
 </body>
 </html>
