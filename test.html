@@ -2,36 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic QR Code Generator</title>
-    <!-- Include qrcode-generator library -->
-    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
+    <meta http-equiv="refresh" content="0; URL='https://forms.gle/FLiozTruzxkfJRHY6'"> 
 </head>
-<body>
-    <div id="qrcode"></div>
-
-    <script>
-        // Function to generate QR code dynamically
-        function generateQRCode(data) {
-            // Create QR code instance
-            var qr = qrcode(0, 'L'); // 0: QR Code version, 'L': Error correction level
-
-            // Add data to QR code
-            qr.addData(data);
-
-            // Make QR code
-            qr.make();
-
-            // Get QR code image as SVG
-            var svg = qr.createSvgTag();
-
-            // Display QR code in the specified div
-            document.getElementById("qrcode").innerHTML = svg;
-        }
-
-        // Example usage: Generate a dynamic QR code with a URL
-        var url = "https://example.com";
-        generateQRCode(url);
-    </script>
-</body>
 </html>
