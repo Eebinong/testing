@@ -61,45 +61,6 @@
     src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF9yjXutbk&#x2F;QfFyB1IPXsSLViWcrg0s5A&#x2F;view?embed" allowfullscreen="allowfullscreen" allow="fullscreen">
   </iframe>
   </div>
-
-  <script>
-    // Function to reset the slideshow to the first slide
-    function resetSlideshow() {
-      var iframe = document.getElementById('canvaIframe');
-      iframe.src = iframe.src; // Reload the iframe
-    }
-
-    // Listen for any interaction with the slideshow
-    document.getElementById('canvaIframe').addEventListener('load', function() {
-      clearTimeout(slideshowResetTimeout); // Clear the previous timeout
-      var currentPage = getCurrentPage();
-      var timeout = getPageTimeout(currentPage);
-      var slideshowResetTimeout = setTimeout(resetSlideshow, timeout); // Reset the timeout based on the current page
-    });
-
-        
-    // Function to get the current page of the Canva presentation
-    function getCurrentPage() {
-      var iframe = document.getElementById('canvaIframe');
-      var url = new URL(iframe.src);
-      var searchParams = new URLSearchParams(url.search);
-      var page = searchParams.get('page');
-      return parseInt(page) || 1; // Default to page 1 if page number is not found
-    }
-
-    // Function to get the timeout for the current page
-    function getPageTimeout(page) {
-      // Define timeouts for different pages (in milliseconds)
-      var timeouts = {
-        1: 100000, // 10 seconds for page 1
-
-        // Add more pages as needed
-      };
-
-      // Return the timeout for the current page or a default timeout if not defined
-      return timeouts[page] || 100000; // Default timeout is 5 seconds
-    }
-  </script>
 </body>
 </html>
 
