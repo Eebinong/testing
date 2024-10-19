@@ -2,27 +2,50 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Redirect to Google Form</title>
-    <script>
-        var googleFormUrl = 'https://forms.gle/w3P6SKohUmEVdmWm8'; // Replace this with your Google Form link
-        
-        // Function to add cache buster to URL
-        function addCacheBuster(url) {
-            var cacheBuster = Date.now(); // Get current timestamp as cache buster
-            return url + '?v=' + cacheBuster;
-        }
-
-        // Function to redirect to Google Form
-        function redirectToGoogleForm() {
-            var urlWithCacheBuster = addCacheBuster(googleFormUrl);
-            window.location.href = urlWithCacheBuster;
-        }
-    </script>
+    <title>NACES 2021</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body onload="redirectToGoogleForm()">
-    <p>If you are not redirected automatically, <a href="https://forms.gle/w3P6SKohUmEVdmWm8">click here</a>.</p>
+<body>
+    <header>
+        <h1>National Chemical Engineering Symposium 2021</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#theme">Theme</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About NACES 2021</h2>
+        <p>Welcome to the official website for NACES 2021. Stay updated with the latest event news!</p>
+    </section>
+
+    <section id="theme">
+        <h2>Event Theme</h2>
+        <p>The theme for this year is "Innovation in Chemical Engineering".</p>
+    </section>
+
+    <section id="schedule">
+        <h2>Event Schedule</h2>
+        <p>Mark your calendars for December 10–12, 2021. Full event schedule coming soon.</p>
+    </section>
+
+    <section id="register">
+        <h2>Register Now!</h2>
+        <button onclick="register()">Register</button>
+    </section>
+
+    <footer>
+        <p>©2021 Universiti Sains Malaysia</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
+
 
