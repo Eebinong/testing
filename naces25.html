@@ -3,49 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NACES 2021</title>
-    <link rel="stylesheet" href="style.css">
+    <title>NACES 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        section {
+            padding: 20px;
+            background-color: white;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Hide the About section initially */
+        .about {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
     <header>
-        <h1>National Chemical Engineering Symposium 2021</h1>
+        <h1>NACES 2025</h1>
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#theme">Theme</a></li>
-                <li><a href="#schedule">Schedule</a></li>
-                <li><a href="#register">Register</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" onclick="showAbout()">About</a></li>
+                <li><a href="#program">Program</a></li>
+                <li><a href="#registration">Registration</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="about">
-        <h2>About NACES 2021</h2>
-        <p>Welcome to the official website for NACES 2021. Stay updated with the latest event news!</p>
+    <section id="program">
+        <h2>Event Program</h2>
+        <p>The event will be held from 13th-14th December 2025 at DK Complex of USM Engineering Campus.</p>
     </section>
 
-    <section id="theme">
-        <h2>Event Theme</h2>
-        <p>The theme for this year is "Innovation in Chemical Engineering".</p>
+    <section id="registration">
+        <h2>Registration Fees</h2>
+        <p>Local: MYR 350, International: USD 100. Click the link to register!</p>
     </section>
 
-    <section id="schedule">
-        <h2>Event Schedule</h2>
-        <p>Mark your calendars for December 10–12, 2021. Full event schedule coming soon.</p>
-    </section>
-
-    <section id="register">
-        <h2>Register Now!</h2>
-        <button onclick="register()">Register</button>
+    <section id="about" class="about">
+        <h2>About NACES 2025</h2>
+        <p>The theme is "XXX". The event includes multiple competitions and academic presentations to promote innovation in chemical engineering.</p>
+        <button onclick="hideAbout()">Back to Program</button>
     </section>
 
     <footer>
-        <p>©2021 Universiti Sains Malaysia</p>
+        <p>Universiti Sains Malaysia NACES 2025</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        function showAbout() {
+            document.querySelector('.about').style.display = 'block'; // Show About section
+            document.getElementById('program').style.display = 'none'; // Hide Program section
+            document.getElementById('registration').style.display = 'none'; // Hide Registration section
+        }
+
+        function hideAbout() {
+            document.querySelector('.about').style.display = 'none'; // Hide About section
+            document.getElementById('program').style.display = 'block'; // Show Program section
+            document.getElementById('registration').style.display = 'block'; // Show Registration section
+        }
+    </script>
 </body>
 </html>
-
-
